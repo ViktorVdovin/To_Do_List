@@ -27,17 +27,17 @@ document.addEventListener("DOMContentLoaded", function () {
       li.className = "task-item start";
 
       const taskBtn = document.createElement("button");
-      taskBtn.textContent = "Начать";
+      taskBtn.textContent = "To Do";
       taskBtn.className = "task-btn start";
       taskBtn.onclick = function () {
         if (taskBtn.classList.contains("start")) {
-          taskBtn.textContent = "Закончить";
+          taskBtn.textContent = "Done";
           taskBtn.classList.remove("start");
           taskBtn.classList.add("finish");
           li.classList.remove("start");
           li.classList.add("finish");
         } else if (taskBtn.classList.contains("finish")) {
-          taskBtn.textContent = "Удалить";
+          taskBtn.textContent = "Delete";
           taskBtn.classList.remove("finish");
           taskBtn.classList.add("delete");
           li.classList.remove("finish");
@@ -51,5 +51,15 @@ document.addEventListener("DOMContentLoaded", function () {
       taskList.appendChild(li);
       taskInput.value = "";
     }
+  });
+  taskInput.addEventListener("input", function () {
+    const inputValue = this.value;
+    let maxLength = 50;
+
+    if (/^[A-ZА-Я]*$/.test(inputValue)) {
+      maxLength = 35;
+    }
+
+    this.maxLength = maxLength;
   });
 });

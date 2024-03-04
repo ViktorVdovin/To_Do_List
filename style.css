@@ -153,16 +153,37 @@ button {
   transform: scale(1.05);
 }
 
+.task-btn {
+  width: 80px;
+}
+
 .task-btn.start {
   background-color: blue;
+  transition: box-shadow 0.3s, transform 0.3s;
 }
 
 .task-btn.finish {
   background-color: green;
+  transition: box-shadow 0.3s, transform 0.3s;
 }
 
 .task-btn.delete {
   background-color: red;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.task-btn.start:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px#fff;
+}
+
+.task-btn.finish:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px#fff;
+}
+
+.task-btn.delete:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px#fff;
 }
 
 .task-item.start {
@@ -196,6 +217,7 @@ button {
 
 h1 {
   position: relative;
+  margin-right: 20px;
 }
 
 .triangle-main {
